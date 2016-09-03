@@ -7,3 +7,11 @@ You've learned a lot about web development so far. I want you to take a moment t
 ---
 
 Your response goes here!
+
+  * So far, the course has been fairly easy as I have some limited experience in web developement, and am familar with HTML Syntax. Having said that, I did learn a couple of new things; I'd never come across horizontal rule before!  
+  
+  * I expect that, if not in the next project, I'll find things hard soon after.
+
+  * Due to the above, it's been hard to not skip through videos. Although I'm pleased to say I watched them all.
+
+  * As I studied Computer Science (BSc) at university, the problem solving strategies covered in the first project come as second nature to me. I certainly used Stack Overflow and Google for this first project.
