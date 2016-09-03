@@ -1,1 +1,26 @@
 /* add your CSS here */
+.card {
+  width: 300px;
+  padding: 0px 10px 0px 10px;
+  border: 2px solid lightgrey;
+  box-shadow: 6px 6px 3px lightgrey;
+}
+
+main {
+  margin: 10px 0px 10px 0px;
+  padding: 0px 10px 0px 10px;
+  border: 1px solid lightgrey;
+}
+
+#fact {
+  font-style: italic;
+}
+
+#statistics {
+  list-style-type:none;
+  padding: 0;
+}
+
+.statistic {
+  font-weight: bold;
+}
