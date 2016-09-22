@@ -1,0 +1,26 @@
+body { margin: 0px; }
+aside { width:300px; height: 100vh; background: #F5F5F5; float: left; }
+@media (max-width:959px) { aside {display: none;} }
+main { width: auto; padding-left: 24px}
+
+.flex-container {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.flex-item {
+  background: black;
+  margin: 24px 24px 0px 0px;
+  height: 250px;
+}
+@media (min-width:1280px) {
+  .flex-item { flex-basis: calc(33.33% - 24px); }
+}
+@media (max-width:1279px) {
+  .flex-item{ flex-basis: calc(50% - 24px); }
+}
+@media (max-width:599px) {
+  .flex-item{ flex-basis: calc(100% - 24px); }
+}
