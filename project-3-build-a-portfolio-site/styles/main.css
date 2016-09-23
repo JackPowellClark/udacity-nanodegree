@@ -1,6 +1,5 @@
 body { margin: 0px; }
 aside { width:300px; height: 100vh; background: #E91E63; float: left; }
-@media (max-width:959px) { aside {display: none;} }
 main { width: auto; padding-left: 24px; }
 
 .flex-container {
@@ -13,13 +12,19 @@ main { width: auto; padding-left: 24px; }
 .flex-item {
   background: #03A9F4;
   margin: 24px 24px 0px 0px;
-  height: 250px;
+  height: 350px;
 }
 @media (min-width:1280px) {
   .flex-item { flex-basis: calc(33.33% - 24px); }
 }
 @media (max-width:1279px) {
   .flex-item{ flex-basis: calc(50% - 24px); }
+}
+@media (max-width:959px) {
+  aside {
+    height: 100px;
+    width: 100vw;
+  }
 }
 @media (max-width:599px) {
   .flex-item{ flex-basis: calc(100% - 16px); margin: 16px 16px 0px 0px; }
