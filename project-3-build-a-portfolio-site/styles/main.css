@@ -1,6 +1,9 @@
 body { margin: 0px; }
 aside { width:300px; height: 100vh; background: #F5F5F5; float: left; }
+
 main { width: auto; padding-left: 24px; }
+
+
 
 main.flex-container {
   height: 100vh;
@@ -9,12 +12,10 @@ main.flex-container {
   align-content: flex-start;
 }
 
-.flex-item {
-  background: #03A9F4;
-  margin: 24px 24px 0px 0px;
-  height: 350px;
-}
 
+
+/* For all items inside the flex container */
+.flex-item { background: #03A9F4; margin: 24px 24px 0px 0px; height: 350px; }
 
 /* Tailor the presentation of content to a range of devices */
 /* Large devices */
