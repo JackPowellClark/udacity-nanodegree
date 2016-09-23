@@ -1,38 +1,49 @@
 body { margin: 0px; }
-aside { width:300px; height: 100vh; background: #F5F5F5; float: left; }
-
+header {
+  width:300px;
+  height: 100vh;
+  background: #F5F5F5;
+  position: fixed;
+  float: left;
+}
 main { width: auto; padding-left: 24px; }
 
-
-
 main.flex-container {
-  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+
+  height: 100vh;
+  margin-left: 300px;
 }
 
-
-
 /* For all items inside the flex container */
-.flex-item { background: #03A9F4; margin: 24px 24px 0px 0px; height: 350px; }
+  article.flex-item { background: red; margin: 24px 24px 0px 0px; height: 350px; }
+
+  article.flex-item:last-child { margin-bottom: 16px; }
 
 /* Tailor the presentation of content to a range of devices */
 /* Large devices */
 @media (min-width:1280px) {
-  .flex-item { flex-basis: calc(33.33% - 24px); }
+  /* Recalculate the main size for all flex items to display 3 item per row */
+  article.flex-item { flex-basis: calc(33.33% - 24px); }
 }
 /* Medium devices */
 @media (max-width:1279px) {
-  .flex-item { flex-basis: calc(50% - 24px); }
+  /* Recalculate the main size for all flex items to display 2 item per row */
+  article.flex-item { flex-basis: calc(50% - 24px); }
 }
 /* Small devices */
 @media (max-width:959px) {
-  aside { height: 80px; width: 100vw; position: fixed; margin-top: -80px; }
-  .flex-container { margin-top: 80px; }
+  header { height: 80px; width: 100vw; position: fixed; margin-top: -80px; }
+  main.flex-container { margin-top: 80px; margin-left: 0px;}
+  /* Recalculate the main size for all flex items to display 2 item per row */
+  article.flex-item { flex-basis: calc(50% - 24px); }
 }
 /* Extra small devices */
 @media (max-width:599px) {
+  /* Reduce the empty space between flex items and device edge */
   main { padding-left: 16px; }
-  .flex-item { flex-basis: calc(100% - 16px); margin: 16px 16px 0px 0px; }
+  /* Recalculate the main size for all flex items to display 1 item per row */
+  article.flex-item { flex-basis: calc(100% - 16px); margin: 16px 16px 0px 0px; }
 }
