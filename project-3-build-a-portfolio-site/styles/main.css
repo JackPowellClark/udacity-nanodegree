@@ -1,8 +1,8 @@
 body { margin: 0px; }
-aside { width:300px; height: 100vh; background: #E91E63; float: left; }
+aside { width:300px; height: 100vh; background: #F5F5F5; float: left; }
 main { width: auto; padding-left: 24px; }
 
-.flex-container {
+main.flex-container {
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -14,19 +14,24 @@ main { width: auto; padding-left: 24px; }
   margin: 24px 24px 0px 0px;
   height: 350px;
 }
+
+
+/* Tailor the presentation of content to a range of devices */
+/* Large devices */
 @media (min-width:1280px) {
   .flex-item { flex-basis: calc(33.33% - 24px); }
 }
+/* Medium devices */
 @media (max-width:1279px) {
-  .flex-item{ flex-basis: calc(50% - 24px); }
+  .flex-item { flex-basis: calc(50% - 24px); }
 }
+/* Small devices */
 @media (max-width:959px) {
-  aside {
-    height: 100px;
-    width: 100vw;
-  }
+  aside { height: 80px; width: 100vw; position: fixed; margin-top: -80px; }
+  .flex-container { margin-top: 80px; }
 }
+/* Extra small devices */
 @media (max-width:599px) {
-  .flex-item{ flex-basis: calc(100% - 16px); margin: 16px 16px 0px 0px; }
   main { padding-left: 16px; }
+  .flex-item { flex-basis: calc(100% - 16px); margin: 16px 16px 0px 0px; }
 }
