@@ -1,26 +1,41 @@
-body { margin: 0px; }
-header {
-  width:300px;
-  height: 100vh;
-  background: #F5F5F5;
-  position: fixed;
-  float: left;
+body {
+  margin: 0px;
+  font-family: 'Noto Sans', sans-serif;
 }
-main { width: auto; padding-left: 24px; }
+header {
+  width:300px; height: 100vh;
+  padding: 60px 0px 0px 40px;*/
+  position: fixed; float: left;
+  background: #F5F5F5;
+}
+
+h1 {
+  margin: 0px; padding-bottom: 60px;
+  text-indent: 3px;
+  font-size: 45px;
+}
+
+nav a {
+  display: block;
+  padding-bottom: 18px;
+  font-size: 18px; text-decoration: none;
+}
 
 main.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-
-  height: 100vh;
-  margin-left: 300px;
+  width: auto; height: 100vh;
+  margin-left: 300px; padding-left: 24px;
+  display: flex; flex-wrap: wrap; align-content: flex-start;
 }
 
 /* For all items inside the flex container */
-  article.flex-item { background: red; margin: 24px 24px 0px 0px; height: 350px; }
-
-  article.flex-item:last-child { margin-bottom: 16px; }
+article.flex-item {
+  height: 350px;
+  margin: 24px 24px 0px 0px;
+  background: black;
+}
+article.flex-item:last-child {
+  margin-bottom: 16px;
+}
 
 /* Tailor the presentation of content to a range of devices */
 /* Large devices */
