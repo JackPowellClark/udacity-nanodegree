@@ -1,64 +1,97 @@
 body {
+  display: flex;
   margin: 0px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif; color: white;
 }
 header {
   width:300px; height: 100vh;
   padding: 60px 0px 0px 40px;
-  position: fixed; float: left;
-  background: #F5F5F5;
+  background: #3F51B5;
 }
 
 h1 {
-  margin: 0px; padding-bottom: 60px;
-  text-indent: 3px;
-  font-size: 45px;
+  margin: 0px;
+  font-size: 45px; text-indent: 4px;
 }
 
-nav a {
+h3 {
+  padding-bottom: 40px;
+  font-size: 16px;
+}
+nav > a {
   display: block;
-  padding-bottom: 18px;
-  font-size: 18px; text-decoration: none;
+  font-size: 24px; text-decoration: none; color: white;
 }
 
-main.flex-container {
-  width: auto; height: 100vh;
-  margin-left: 300px; padding-left: 24px;
+/* Create a flex container */
+.flex-container {
+  width: calc(100% - 300px) ; height: 100vh;
+  padding-left: 24px;
   display: flex; flex-wrap: wrap; align-content: flex-start;
+  background: #FAFAFA;
 }
 
 /* For all items inside the flex container */
-article.flex-item {
+.flex-item {
   height: 350px;
-  margin: 24px 24px 0px 0px;
+  margin: 24px 24px 0px 0px; border-radius: 10px;
   background: black;
 }
-article.flex-item:last-child {
-  margin-bottom: 16px;
+/*.flex-item:last-child { margin-bottom: 16px; }*/
+
+#item-1 {
+  background-image: url("../images/item-1.png");
+  background-size: cover; background-position: center;
+}
+#item-2 {
+  background-image: url("../images/item-2.jpg");
+  background-size: cover; background-position: center;
+}
+#item-3 {
+  background-image: url("../images/item-3.jpg");
+  background-size: cover; background-position: center;
+}
+#item-4 {
+  background-image: url("../images/item-4.jpg");
+  background-size: cover; background-position: center;
+}
+#item-5 {
+  background-image: url("../images/item-5.jpg");
+  background-size: cover; background-position: center;
 }
 
 /* Tailor the presentation of content to a range of devices */
 /* Large devices */
 @media (min-width:1280px) {
   /* Recalculate the main size for all flex items to display 3 item per row */
-  article.flex-item { flex-basis: calc(33.33% - 24px); }
+  .flex-item { flex-basis: calc(33.33% - 24px); }
 }
 /* Medium devices */
 @media (max-width:1279px) {
   /* Recalculate the main size for all flex items to display 2 item per row */
-  article.flex-item { flex-basis: calc(50% - 24px); }
+  .flex-item { flex-basis: calc(50% - 24px); }
 }
 /* Small devices */
 @media (max-width:959px) {
-  header { height: 80px; width: 100vw; position: fixed; margin-top: -80px; }
-  main.flex-container { margin-top: 80px; margin-left: 0px;}
+  body {
+    flex-wrap: wrap;
+  }
+
+  .flex-container {
+    width: 100%;
+  }
+
+  header {
+    height: 80px; width: 100vw;
+  }
+
   /* Recalculate the main size for all flex items to display 2 item per row */
-  article.flex-item { flex-basis: calc(50% - 24px); }
+  .flex-item { flex-basis: calc(50% - 24px); }
 }
 /* Extra small devices */
 @media (max-width:599px) {
   /* Reduce the empty space between flex items and device edge */
-  main { padding-left: 16px; }
+  .flex-container { padding-left: 16px; }
   /* Recalculate the main size for all flex items to display 1 item per row */
-  article.flex-item { flex-basis: calc(100% - 16px); margin: 16px 16px 0px 0px; }
+  .flex-item { flex-basis: calc(100% - 16px); margin: 16px 16px 0px 0px; }
 }
