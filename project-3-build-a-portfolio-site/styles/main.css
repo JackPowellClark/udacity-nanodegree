@@ -1,0 +1,16 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+header {
+  display: flex; justify-content: space-between;
+}
+
+
+header #udacity-logo {
+  max-height: 75px; max-width: 75px;
+}
+
+header #page-title * {
+  margin: 0px;
+}
