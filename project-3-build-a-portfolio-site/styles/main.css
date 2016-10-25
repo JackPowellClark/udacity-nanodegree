@@ -1,6 +1,6 @@
 body {
   /* Set a max width, ensure content is centered, and add guttering */
-  max-width: 980px; margin: 0 auto; padding: 0px 16px;
+  max-width: 980px; margin: 0px auto; padding: 0px 16px;
   /* Specify the default font as 'Noto Sans' */
   font-family: 'Noto Sans', sans-serif;
 }
@@ -15,15 +15,50 @@ header .logo {
   max-height: 75px; max-width: 75px;
 }
 
-header .title * {
+header .main-title * {
   /* Horizontally allign title on the right */
   text-align: right;
+  /* Set the color of text */
+  color: #2d3c49
 }
 
-.hero {
-  /* Add padding below the hero */
-  padding-bottom: 15px;
+.hero-image, .image-of-work {
   /* Set the maximum width of the hero to be that of its parent */
   max-width: 100%;
 }
 
+main {
+  /* Define a flex container */
+  display: flex; flex-wrap: wrap;
+}
+
+.featured-work-title {
+  /* Set the initial main size to 100% */
+  flex-basis: 100%;
+  /* Set the color of text */
+  color: #7d97ad
+}
+
+.item-of-work {
+  /* Ensure content is centered, and padded */
+  margin: 0px auto; padding-bottom: 24px;
+  /* Horizontally allign text center */
+  text-align: center;
+}
+
+.work-title {
+  /* Set the color of text */
+  color: #2d3c49
+}
+
+/* Tailor content for larger devices */
+@media (min-width:720px) {
+  /* Recalculate the size of all items of work, displaying 3 items per row */
+  .item-of-work{
+    margin: 0px;
+    flex-basis: calc(33% - 14px);
+  }
+  main {
+  justify-content: space-between;
+  }
+}
