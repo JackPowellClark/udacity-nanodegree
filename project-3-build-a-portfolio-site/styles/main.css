@@ -1,20 +1,24 @@
-body { font-family: 'Noto Sans', sans-serif; }
+body {
+  /* Set a max width, ensure content it's centered, and add a gutter */
+  max-width: 980px; margin: 0 auto; padding: 0px 16px;
+  /* Specify the default font to be 'Noto Sans' */
+  font-family: 'Noto Sans', sans-serif;
+}
 
 header {
-  display: flex; justify-content: space-between;
+  display: flex; justify-content: space-between; align-items: center;
 }
 
 header .logo {
   max-height: 75px; max-width: 75px;
 }
 
-header .page-title * {
-  margin: 0px;
+header .title * {
   text-align: right;
 }
 
-.hero-image {
+.hero {
   display: block;
-  margin: 0 auto;
+  padding-bottom: 15px;
   max-width: 100%;
 }
