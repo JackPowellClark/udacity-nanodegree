@@ -22,8 +22,8 @@ header .main-title * {
   color: #2d3c49
 }
 
-.hero-image, .image-of-work {
-  /* Set the maximum width of the hero to be that of its parent */
+.hero img, .work-image {
+  /* Set the maximum width of both the hero and work image to be 100% of its parent */
   max-width: 100%;
 }
 

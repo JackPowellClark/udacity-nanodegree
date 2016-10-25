@@ -15,8 +15,6 @@
     <meta name="author" content="Jack Powell Clark">
     <!-- Specify the document's description -->
     <meta name="description" content="Portfolio site of Jack Clark">
-    <!-- Specify a shortcut icon (N.B. desktop only) -->
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 
     <!-- Link to stylesheet: normalize.min.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -40,8 +38,12 @@
 
       <!-- Specify a thematic break -->
       <hr>
-      <!-- Add a hero image -->
-      <img class="hero-image" src="./images/code.jpg" alt="Source code">
+
+      <!-- Defines a section 'hero' in the document -->
+      <section class="hero">
+        <!-- Add a hero image -->
+        <img src="./images/code.jpg" alt="Source code">
+      </section>
 
       <!-- Specify the document's main content -->
       <main>
@@ -49,25 +51,25 @@
         <h2 class="featured-work-title">Featured Work</h2>
 
         <!-- Define a division for an item of work, containing an image, title, and link -->
-        <div class="item-of-work">
-          <img class="image-of-work" src="./images/work-image-1.png" alt="">
+        <article class="item-of-work">
+          <img class="work-image" src="./images/work-image-1.png" alt="">
           <h3 class="work-title">APPIFY</h3>
-          <a class="work-link" href="https://www.google.co.uk">Link</a>
-        </div>
+          <a class="work-link" href="https://www.udacity.com">Link</a>
+        </article>
 
         <!-- Define a division for an item of work, containing an image, title, and link -->
-        <div class="item-of-work">
-          <img class="image-of-work" src="./images/work-image-2.png" alt="">
+        <article class="item-of-work">
+          <img class="work-image" src="./images/work-image-2.png" alt="">
           <h3 class="work-title">SUNFLOWER</h3>
-          <a class="work-link" href="https://www.google.co.uk">Link</a>
-        </div>
+          <a class="work-link" href="www.udacity.com">Link</a>
+        </article>
 
         <!-- Define a division for an item of work, containing an image, title, and link -->
-        <div class="item-of-work">
-          <img class="image-of-work" src="./images/work-image-3.png" alt="">
+        <article class="item-of-work">
+          <img class="work-image" src="./images/work-image-3.png" alt="">
           <h3 class="work-title">BOKEH</h3>
-          <a class="work-link" href="https://www.google.co.uk">Link</a>
-        </div>
+          <a class="work-link" href="www.udacity.com">Link</a>
+        </article>
 
       </main>
   </body>
