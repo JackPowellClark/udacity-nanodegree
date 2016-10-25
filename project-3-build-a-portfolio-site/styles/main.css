@@ -1,24 +1,29 @@
 body {
-  /* Set a max width, ensure content it's centered, and add a gutter */
+  /* Set a max width, ensure content is centered, and add guttering */
   max-width: 980px; margin: 0 auto; padding: 0px 16px;
-  /* Specify the default font to be 'Noto Sans' */
+  /* Specify the default font as 'Noto Sans' */
   font-family: 'Noto Sans', sans-serif;
 }
 
 header {
+  /* Define a flex container and alignment in both axis */
   display: flex; justify-content: space-between; align-items: center;
 }
 
 header .logo {
+  /* Set the max height an width of the logo */
   max-height: 75px; max-width: 75px;
 }
 
 header .title * {
+  /* Horizontally allign title on the right */
   text-align: right;
 }
 
 .hero {
-  display: block;
+  /* Add padding below the hero */
   padding-bottom: 15px;
+  /* Set the maximum width of the hero to be that of its parent */
   max-width: 100%;
 }
+
