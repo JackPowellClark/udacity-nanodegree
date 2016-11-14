@@ -48,7 +48,7 @@ var education = {
 var work = {
   jobs: [
     {
-      employer: "The Engine Group (Partners Andrews Aldridge)",
+      employer: "Engine Group (Partners Andrews Aldridge)",
       title: "Product Development",
       date: "Oct. 2015 – Present",
       location: "London",
@@ -77,7 +77,6 @@ var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location );
 var formattedPhoto = HTMLbioPic.replace("%data%", bio.bioPic);
 var formattedWelcome = HTMLwelcomeMsg.replace("%data%", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, ratione");
 
-
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#header").append(formattedPhoto);
@@ -88,20 +87,17 @@ for(contactInfo of [formattedMobile, formattedEmail, formattedGithub, formattedL
 };
 
 $("#header").append(HTMLskillsStart);
-
 for(skill of bio.skills) {
   let formattedSkill = HTMLskills.replace("%data%", skill);
   $("#skills").append(formattedSkill);
 };
 
 for (job of work.jobs) {
-  $("#workExperience").append(HTMLworkStart);
-
   var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
   var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
-  var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-  $(".work-entry:last").append(formattedEmployerTitle);
+  $("#workExperience").append(HTMLworkStart);
+  $(".work-entry:last").append(formattedEmployer + formattedTitle);
   $(".work-entry:last").append(HTMLworkDates.replace("%data%", job.date));
   $(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.location));
   $(".work-entry:last").append(HTMLworkDescription.replace("%data%", job.description));
