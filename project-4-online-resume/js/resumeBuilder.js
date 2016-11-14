@@ -9,7 +9,7 @@ var bio = {
     location: "London"
   },
   skills: ["Front-End Development", "Experiece Design", "Product Management"],
-  bioPic: "../project-4-online-resume/images/fry.jpg",
+  bioPic: "../project-4-online-resume/images/profilePicture.jpg",
   welcomeMessage: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, ratione.",
 };
 
@@ -81,14 +81,14 @@ education.display = function () {
   }
 
   for (let onlineCourse of education.onlineCourses) {
-    let formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineCourse.title);
+    let formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineCourse.title).replace("#", onlineCourse.url);
     let formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineCourse.school);
 
     $("#education").append(HTMLonlineClasses);
     $("#education").append(HTMLschoolStart);
     $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
     $(".education-entry:last").append(HTMLonlineDates.replace("%data%", onlineCourse.dates));
-    $(".education-entry:last").append(HTMLonlineURL.replace("%data%", onlineCourse.url));
+    $(".education-entry:last").append(HTMLonlineURL.replace("%data%", onlineCourse.url).replace("#", onlineCourse.url));
   }
 };
 
