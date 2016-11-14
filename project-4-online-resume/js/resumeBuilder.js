@@ -21,9 +21,6 @@ var education = {
       degree: "MSc",
       result: "Distinction",
       date: "Sep. 2014 — Sep. 2015",
-      modules: ["Managing Innovation", "Science, Technology and Innovation: Markets, Firms and Policies",
-        "Information and Communication Technologies: Policy and Strategy", "Managing Intellectual Property",
-        "Technology Management Project", "Introduction to Statistical Research Methods"]
     },
     {
       name: "University of Sussex",
@@ -31,9 +28,6 @@ var education = {
       degree: "BSc",
       result: "First Class Honours",
       date: "Oct. 2011 — Jun. 2014",
-      modules: ["Further Programming", "Machine Learning", "Acquired Intelligence and Adaptive Behaviour",
-        "Web Computing", "Natural Language Engineering", "Databases", "Technology-Enhanced Learning Environments",
-        "Intelligence in Animals and Machines", "Generative Creativity"]
     }
   ],
   onlineCourses: [
@@ -60,14 +54,13 @@ var work = {
 var projects = {
   projects: [
     {
-      title: "Experience Lab (Website)",
+      title: "Experience Labs @ 60 GPS",
       dates: "Nov. 2016",
       description: "Tasked with X, Y, Z.",
       image: "../project-4-online-resume/images/project-experience-lab.png"
     }
   ]
 };
-
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -111,6 +104,25 @@ for (let project of projects.projects) {
   $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", project.description));
   $(".project-entry:last").append(HTMLprojectImage.replace("%data%", project.image));
 }
+
+for (let school of education.schools) {
+  let formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+  let formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
+
+  $("#education").append(HTMLschoolStart);
+  $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
+  $(".education-entry:last").append(HTMLschoolDates.replace("%data%", school.date));
+  $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", school.result));
+  $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", school.subject));
+}
+
+
+
+
+
+
+
+
 
 // $('#mapDiv').append(googleMap);
 // https://github.com/bennythejudge/frontend-nanodegree-resume/blob/master/js/resumeBuilder.js
