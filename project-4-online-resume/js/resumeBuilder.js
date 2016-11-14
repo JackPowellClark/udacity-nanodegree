@@ -62,7 +62,8 @@ var projects = {
     {
       title: "Experience Lab (Website)",
       dates: "Nov. 2016",
-      description: "Tasked with X, Y, Z."
+      description: "Tasked with X, Y, Z.",
+      image: "../project-4-online-resume/images/project-experience-lab.png"
     }
   ]
 };
@@ -82,25 +83,33 @@ $("#header").prepend(formattedName);
 $("#header").append(formattedPhoto);
 $("#header").append(formattedWelcome);
 
-for(contactInfo of [formattedMobile, formattedEmail, formattedGithub, formattedLocation]) {
+for(let contactInfo of [formattedMobile, formattedEmail, formattedGithub, formattedLocation]) {
   $("#topContacts").append(contactInfo);
-};
+}
 
 $("#header").append(HTMLskillsStart);
-for(skill of bio.skills) {
+for(let skill of bio.skills) {
   let formattedSkill = HTMLskills.replace("%data%", skill);
   $("#skills").append(formattedSkill);
-};
+}
 
-for (job of work.jobs) {
-  var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
-  var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
+for (let job of work.jobs) {
+  let formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+  let formattedTitle = HTMLworkTitle.replace("%data%", job.title);
 
   $("#workExperience").append(HTMLworkStart);
   $(".work-entry:last").append(formattedEmployer + formattedTitle);
   $(".work-entry:last").append(HTMLworkDates.replace("%data%", job.date));
   $(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.location));
   $(".work-entry:last").append(HTMLworkDescription.replace("%data%", job.description));
+}
+
+for (let project of projects.projects) {
+  $("#projects").append(HTMLprojectStart);
+  $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", project.title));
+  $(".project-entry:last").append(HTMLprojectDates.replace("%data%", project.dates));
+  $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", project.description));
+  $(".project-entry:last").append(HTMLprojectImage.replace("%data%", project.image));
 }
 
 // $('#mapDiv').append(googleMap);
