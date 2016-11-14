@@ -2,15 +2,15 @@
 var bio = {
   name: "Jack Clark",
   role: "Product Development",
-  // welcomeMessage: "Welcome!",
-  bioPic: "../images/profilePicture.jpg",
   contacts: {
     mobile: "+447963111196",
     email: "jackpowellclark@gmail.com",
-    github: "jackpowellclark",
+    github: "JackPowellClark",
     location: "London"
   },
-  skills: ["HTML5", "CSS3", "JavaScript", "Ruby"]
+  skills: ["Front-End Development", "Experiece Design", "Product Management"],
+  bioPic: "../project-4-online-resume/images/fry.jpg",
+  welcomeMessage: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, ratione."
 };
 
 var education = {
@@ -50,10 +50,9 @@ var work = {
     {
       employer: "The Engine Group (Partners Andrews Aldridge)",
       title: "Product Development",
-      dates: "Oct. 2015 – Present",
-      description: `Based within the Technology and Innovation Team, this role looks to bridge\
-        business, experience design, and engineering; guiding new product ideas from initial\
-         concept, to launch.`
+      date: "Oct. 2015 – Present",
+      location: "London",
+      description: `Based within the Technology and Innovation Team, this role looks to bridge business, experience design, and engineering; guiding new product ideas from initial concept, to launch.`
     }
   ]
 };
@@ -67,3 +66,46 @@ var projects = {
     }
   ]
 };
+
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile );
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email );
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github );
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location );
+var formattedPhoto = HTMLbioPic.replace("%data%", bio.bioPic);
+var formattedWelcome = HTMLwelcomeMsg.replace("%data%", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, ratione");
+
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").append(formattedPhoto);
+$("#header").append(formattedWelcome);
+
+for(contactInfo of [formattedMobile, formattedEmail, formattedGithub, formattedLocation]) {
+  $("#topContacts").append(contactInfo);
+};
+
+$("#header").append(HTMLskillsStart);
+
+for(skill of bio.skills) {
+  let formattedSkill = HTMLskills.replace("%data%", skill);
+  $("#skills").append(formattedSkill);
+};
+
+for (job of work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
+
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+  $(".work-entry:last").append(formattedEmployerTitle);
+  $(".work-entry:last").append(HTMLworkDates.replace("%data%", job.date));
+  $(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.location));
+  $(".work-entry:last").append(HTMLworkDescription.replace("%data%", job.description));
+}
+
+// $('#mapDiv').append(googleMap);
+// https://github.com/bennythejudge/frontend-nanodegree-resume/blob/master/js/resumeBuilder.js
