@@ -8,9 +8,9 @@ var bio = {
     github: "JackPowellClark",
     location: "London"
   },
+  welcomeMessage: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, ratione.",
   skills: ["Front-End Development", "Experiece Design", "Product Management"],
   bioPic: "../project-4-online-resume/images/profilePicture.jpg",
-  welcomeMessage: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, ratione.",
 };
 
 bio.display = function () {
@@ -39,29 +39,25 @@ var education = {
   schools: [
     {
       name: "University of Sussex",
-      // N.B. I have replaced 'location' with 'result'
-      result: "Distinction",
+      location: "Distinction",
       degree: "MSc",
-      // N.B. I have replaced 'majors' with 'subject' due to irrelevance of majors in the UK
-      subject: "Technology and Innovation Management",
+      majors: ["Managing Innovation", "Technology Product Management", "Science, Technology and Innovations: Markets, Firms and Policies", "Intellectual Property"],
       dates: "Sep. 2014 — Sep. 2015",
       url: "http://www.sussex.ac.uk/bmec/internal/departments/spru/pgcourses/2014/N1501T",
     },
     {
       name: "University of Sussex",
-      // N.B. I have replaced 'location' with 'result'
-      result: "First Class Honours",
+      location: "First Class Honours",
       degree: "BSc",
-      // N.B. I have replaced 'majors' with 'subject' due to irrelevance of majors in the UK
-      subject: "Computer Science (specialism in Music Informatics)",
+      majors: ["Further Programming", "Mathematics for Computing", "Models of Computing", "Natural Language Engineering", "Machine Learning", "Acquired Intelligence & Adaptive Behaviour", "Intelligence in Animals and Machines"],
       dates: "Oct. 2011 — Jun. 2014",
       url: "http://www.sussex.ac.uk/ei/internal/coursesandmodules/informatics/ugcourses/2011/WGH41U",
     }
   ],
   onlineCourses: [
     {
-      school: "Udacity",
       title: "Front-End Web Developer",
+      school: "Udacity",
       dates: "Jul. 2016 — Present",
       url: "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
     }
@@ -76,8 +72,11 @@ education.display = function () {
     $("#education").append(HTMLschoolStart);
     $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
     $(".education-entry:last").append(HTMLschoolDates.replace("%data%", school.dates));
-    $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", school.result));
-    $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", school.subject));
+    $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", school.location));
+
+    for (let major of school.majors) {
+      $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", major));
+    }
   }
 
   for (let onlineCourse of education.onlineCourses) {
@@ -98,7 +97,7 @@ var work = {
       employer: "Engine Group (Partners Andrews Aldridge)",
       title: "Product Development",
       location: "London",
-      dates: "Oct. 2015 – Present",
+      dates: "Oct. 2015 — Present",
       description: "Based within the Technology and Innovation Team, this role looks to bridge business, experience design, and engineering; guiding new product ideas from initial concept, to launch."
     }
   ]
@@ -123,7 +122,7 @@ var projects = {
       title: "Experience Labs @ 60 GPS",
       dates: "Nov. 2016",
       description: "Led the development of a new user testing facility.",
-      images: ["../project-4-online-resume/images/project-experience-lab.png"]
+      images: ["../project-4-online-resume/images/project-experience-lab-1.png", "../project-4-online-resume/images/project-experience-lab-2.png"]
     }
   ]
 };
