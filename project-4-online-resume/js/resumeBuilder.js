@@ -10,13 +10,13 @@ var bio = {
   },
   welcomeMessage: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, ratione.",
   skills: ["Front-End Development", "Experiece Design", "Product Management"],
-  bioPic: "../project-4-online-resume/images/profilePicture.jpg",
+  biopic: "../project-4-online-resume/images/profilePicture.jpg",
 };
 
 bio.display = function () {
   $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
   $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-  $("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
+  $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
   $("#header").append(HTMLwelcomeMsg.replace("%data%", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, ratione"));
 
   let formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -32,6 +32,10 @@ bio.display = function () {
   for (let skill of bio.skills) {
     let formattedSkill = HTMLskills.replace("%data%", skill);
     $("#skills").append(formattedSkill);
+  }
+
+  for (let contactInfo of [formattedMobile, formattedEmail, formattedGithub, formattedLocation]) {
+    $("#footerContacts").append(contactInfo);
   }
 };
 
