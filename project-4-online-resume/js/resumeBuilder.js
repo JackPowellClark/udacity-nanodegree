@@ -24,7 +24,7 @@ bio.display = function () {
   let formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
   let formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-  for (let contactInfo of [formattedMobile, formattedEmail, formattedGithub, formattedLocation]) {
+  for (let contactInfo of[formattedMobile, formattedEmail, formattedGithub, formattedLocation]) {
     $("#topContacts").append(contactInfo);
   }
 
@@ -34,38 +34,33 @@ bio.display = function () {
     $("#skills").append(formattedSkill);
   }
 
-  for (let contactInfo of [formattedMobile, formattedEmail, formattedGithub, formattedLocation]) {
+  for (let contactInfo of[formattedMobile, formattedEmail, formattedGithub, formattedLocation]) {
     $("#footerContacts").append(contactInfo);
   }
 };
 
 var education = {
-  schools: [
-    {
-      name: "University of Sussex",
-      location: "Distinction",
-      degree: "MSc",
-      majors: ["Managing Innovation", "Technology Product Management", "Science, Technology and Innovations: Markets, Firms and Policies", "Intellectual Property"],
-      dates: "Sep. 2014 — Sep. 2015",
-      url: "http://www.sussex.ac.uk/bmec/internal/departments/spru/pgcourses/2014/N1501T",
-    },
-    {
-      name: "University of Sussex",
-      location: "First Class Honours",
-      degree: "BSc",
-      majors: ["Further Programming", "Mathematics for Computing", "Models of Computing", "Natural Language Engineering", "Machine Learning", "Acquired Intelligence & Adaptive Behaviour", "Intelligence in Animals and Machines"],
-      dates: "Oct. 2011 — Jun. 2014",
-      url: "http://www.sussex.ac.uk/ei/internal/coursesandmodules/informatics/ugcourses/2011/WGH41U",
-    }
-  ],
-  onlineCourses: [
-    {
-      title: "Front-End Web Developer",
-      school: "Udacity",
-      dates: "Jul. 2016 — Present",
-      url: "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
-    }
-  ]
+  schools: [{
+    name: "University of Sussex",
+    location: "Distinction",
+    degree: "MSc",
+    majors: ["Managing Innovation", "Technology Product Management", "Science, Technology and Innovations: Markets, Firms and Policies", "Intellectual Property"],
+    dates: "Sep. 2014 — Sep. 2015",
+    url: "http://www.sussex.ac.uk/bmec/internal/departments/spru/pgcourses/2014/N1501T",
+  }, {
+    name: "University of Sussex",
+    location: "First Class Honours",
+    degree: "BSc",
+    majors: ["Further Programming", "Mathematics for Computing", "Models of Computing", "Natural Language Engineering", "Machine Learning", "Acquired Intelligence & Adaptive Behaviour", "Intelligence in Animals and Machines"],
+    dates: "Oct. 2011 — Jun. 2014",
+    url: "http://www.sussex.ac.uk/ei/internal/coursesandmodules/informatics/ugcourses/2011/WGH41U",
+  }],
+  onlineCourses: [{
+    title: "Front-End Web Developer",
+    school: "Udacity",
+    dates: "Jul. 2016 — Present",
+    url: "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
+  }]
 };
 
 education.display = function () {
@@ -96,15 +91,13 @@ education.display = function () {
 };
 
 var work = {
-  jobs: [
-    {
-      employer: "Engine Group (Partners Andrews Aldridge)",
-      title: "Product Development",
-      location: "London",
-      dates: "Oct. 2015 — Present",
-      description: "Based within the Technology and Innovation Team, this role looks to bridge business, experience design, and engineering; guiding new product ideas from initial concept, to launch."
-    }
-  ]
+  jobs: [{
+    employer: "Engine Group (Partners Andrews Aldridge)",
+    title: "Product Development",
+    location: "London",
+    dates: "Oct. 2015 — Present",
+    description: "Based within the Technology and Innovation Team, this role looks to bridge business, experience design, and engineering; guiding new product ideas from initial concept, to launch."
+  }]
 };
 
 work.display = function () {
@@ -121,14 +114,12 @@ work.display = function () {
 };
 
 var projects = {
-  projects: [
-    {
-      title: "Experience Labs @ 60 GPS",
-      dates: "Nov. 2016",
-      description: "Led the development of a new user testing facility.",
-      images: ["../project-4-online-resume/images/project-experience-lab-1.png", "../project-4-online-resume/images/project-experience-lab-2.png"]
-    }
-  ]
+  projects: [{
+    title: "Experience Labs @ 60 GPS",
+    dates: "Nov. 2016",
+    description: "Led the development of a new user testing facility.",
+    images: ["../project-4-online-resume/images/project-experience-lab-1.png", "../project-4-online-resume/images/project-experience-lab-2.png"]
+  }]
 };
 
 projects.display = function () {
