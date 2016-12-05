@@ -1,8 +1,7 @@
 // Enemies our player must avoid
 class Enemy {
   constructor() {
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
+    // The image/sprite for our enemies
     this.sprite = './images/enemy-bug.png';
   }
 
@@ -25,38 +24,36 @@ class Enemy {
 // a handleInput() method.
 class Player {
   constructor() {
-    // Now instantiate your objects.
-    // Place all enemy objects in an array called allEnemies
-    // Place the player object in a variable called player
-
+    this.sprite = './images/char-boy.png';
+    this.x = 2; this.y = 5;
   }
 
-  update() {
-
-  }
+  update(dt) {}
 
   render() {
-
+    ctx.drawImage(Resources.get(this.sprite), this.x * 101, (this.y * 83));
   }
 
   handleInput(keyPressed) {
-    console.log(`${keyPressed} key was pressed.`);
+    this.update();
+    console.log(`The ${keyPressed} key was pressed.`);
   }
 }
+
+// Now instantiate your objects.
+// Place all enemy objects in an array called allEnemies
+let allEnemies = [];
+// Place the player object in a variable called player
+let player = new Player();
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function (e) {
-  var allowedKeys = {
+  const allowedKeys = {
     37: 'left',
     38: 'up',
     39: 'right',
     40: 'down'
   };
-
   player.handleInput(allowedKeys[e.keyCode]);
 });
-
-
-
-let player = new Player();
