@@ -28,15 +28,23 @@ class Player {
     this.x = 2; this.y = 5;
   }
 
-  update(dt) {}
+  update() {}
 
   render() {
-    ctx.drawImage(Resources.get(this.sprite), this.x * 101, (this.y * 83));
+    ctx.drawImage(Resources.get(this.sprite), (this.x * 101), (this.y * 83) - 20);
   }
 
   handleInput(keyPressed) {
-    this.update();
-    console.log(`The ${keyPressed} key was pressed.`);
+    switch (keyPressed) {
+      case "right": this.x += 1
+        break;
+      case "left": this.x -= 1
+        break;
+      case "down": this.y += 1
+        break;
+      case "up": this.y -= 1
+        break;
+    }
   }
 }
 
