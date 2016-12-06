@@ -4,7 +4,7 @@ class Enemy {
     // The image/sprite for our enemies
     this.sprite = './images/enemy-bug.png';
     this.x = 0; this.y =  Math.floor((Math.random() * 3) + 1) * 83 - 25;
-    this.speed = Math.random() * (1 - 1) + 1;
+    this.speed = Math.random() * (5 - 1) + 1;
   }
 
   // Update the enemy's position, required method for game
@@ -14,7 +14,7 @@ class Enemy {
     // which will ensure the game runs at the same speed for
     // all computers.
 
-    // If an enemy is off the
+    // If an enemy is off the grid, return them to the start.
     if (this.x > 505) {
       this.x = -101;
     } else {
@@ -22,7 +22,7 @@ class Enemy {
     }
   }
 
-  // Draw the enemy on the screen, required method for game
+  // Draw the enemy on the screen, required method for game.
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
