@@ -40,7 +40,7 @@ var Engine = (function (global) {
      * computer is) - hurray time!
      */
     var now = Date.now(),
-        dt = (now - lastTime) / 1000.0;
+      dt = (now - lastTime) / 1000.0;
 
     /* Call our update/render functions, pass along the time delta to
      * our update function since it may be used for smooth animation.
@@ -80,7 +80,8 @@ var Engine = (function (global) {
    */
   function update(dt) {
     updateEntities(dt);
-    // checkCollisions();
+    checkCollisions();
+    checkCharacter();
   }
 
   /* This is called by the update function and loops through all of the
@@ -95,6 +96,26 @@ var Engine = (function (global) {
       enemy.update(dt);
     });
     player.update();
+  }
+
+
+  /* Check whther two entities occupy the same space. If they do, reset game. */
+  function checkCollisions() {
+    for (let enemy of allEnemies) {
+      let roundedX = Math.round(enemy.x / 101),
+          roundedY = Math.round(enemy.y / 83);
+
+      if (roundedX == player.x && roundedY == player.y) {
+        reset();
+      }
+    }
+  }
+
+  /* Check whether character has entered water. */
+  function checkCharacter() {
+    if (player.y == 0) {
+      reset();
+    }
   }
 
   /* This function initially draws the "game level", it will then call
@@ -159,7 +180,7 @@ var Engine = (function (global) {
    * those sorts of things. It's only called once by the init() method.
    */
   function reset() {
-    // noop
+    console.log(`Game requires reset.`);
   }
 
   /* Go ahead and load all of the images we know we're going to need to
