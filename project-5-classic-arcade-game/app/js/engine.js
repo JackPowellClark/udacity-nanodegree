@@ -20,10 +20,10 @@ var Engine = (function (global) {
    * set the canvas elements height/width and add it to the DOM.
    */
   var doc = global.document,
-      win = global.window,
-      canvas = doc.createElement('canvas'),
-      ctx = canvas.getContext('2d'),
-      lastTime;
+    win = global.window,
+    canvas = doc.createElement('canvas'),
+    ctx = canvas.getContext('2d'),
+    lastTime;
 
   canvas.width = 505;
   canvas.height = 606;
@@ -103,7 +103,7 @@ var Engine = (function (global) {
   function checkCollisions() {
     for (let enemy of allEnemies) {
       let roundedX = Math.round(enemy.x / 101),
-          roundedY = Math.round(enemy.y / 83);
+        roundedY = Math.round(enemy.y / 83);
 
       if (roundedX == player.x && roundedY == player.y) {
         reset();
@@ -180,7 +180,7 @@ var Engine = (function (global) {
    * those sorts of things. It's only called once by the init() method.
    */
   function reset() {
-    console.log(`Game requires reset.`);
+    player.reset();
   }
 
   /* Go ahead and load all of the images we know we're going to need to

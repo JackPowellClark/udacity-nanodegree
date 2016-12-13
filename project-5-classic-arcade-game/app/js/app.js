@@ -3,7 +3,12 @@ class Enemy {
   constructor() {
     // The image/sprite for our enemies
     this.sprite = './images/enemy-bug.png';
-    this.x = 0; this.y =  Math.floor((Math.random() * 3) + 1) * 83 - 25;
+    this.generateCharacterics();
+  }
+
+  // Generate an enemy's x, y, and speed.
+  generateCharacterics() {
+    this.x = -101; this.y =  Math.floor((Math.random() * 3) + 1) * 83 - 25;
     this.speed = Math.random() * (5 - 1) + 1;
   }
 
@@ -16,7 +21,7 @@ class Enemy {
 
     // If an enemy is off the grid, return them to the start.
     if (this.x > 505) {
-      this.x = -101;
+      this.generateCharacterics();
     } else {
       this.x += this.speed;
     }
@@ -37,6 +42,10 @@ class Player {
     this.x = 2; this.y = 5;
   }
 
+  reset() {
+     this.x = 2; this.y = 5;
+  }
+
   update() {}
 
   render() {
@@ -45,11 +54,17 @@ class Player {
 
   handleInput(keyPressed) {
     switch (keyPressed) {
-      case "right": this.x += 1
+      case "right": if (this.x != 4) {
+          this.x += 1
+        }
         break;
-      case "left": this.x -= 1
+      case "left": if (this.x != 0) {
+          this.x -= 1
+        }
         break;
-      case "down": this.y += 1
+      case "down": if (this.y != 5) {
+          this.y += 1
+        }
         break;
       case "up": this.y -= 1
         break;
@@ -59,8 +74,10 @@ class Player {
 
 // Now instantiate your objects.
 let enemy1 = new Enemy();
+let enemy2 = new Enemy();
+let enemy3 = new Enemy();
 // Place all enemy objects in an array called allEnemies
-let allEnemies = [enemy1];
+let allEnemies = [enemy1, enemy2, enemy3];
 // Place the player object in a variable called player
 let player = new Player();
 
