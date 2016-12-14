@@ -1,82 +1,120 @@
-// Enemies our player must avoid
+/* Enemies our player must avoid */
 class Enemy {
+  /* Create and initialise an Enemy object */
   constructor() {
-    // The image/sprite for our enemies
     this.sprite = './images/enemy-bug.png';
-    this.generateCharacterics();
+    this.x = -101;
+    this.y = this.generateY();
+    this.speed = this.generateSpeed();
   }
 
-  // Generate an enemy's x, y, and speed.
-  generateCharacterics() {
-    this.x = -101; this.y =  Math.floor((Math.random() * 3) + 1) * 83 - 25;
-    this.speed = Math.random() * (5 - 1) + 1;
+  /* Randomly generate an enemy's y position */
+  generateY() {
+    return Math.floor((Math.random() * 3) + 1) * 83 - 25;
   }
 
-  // Update the enemy's position, required method for game
-  // Parameter: dt, a time delta between ticks
-  update(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
+  /* Randomly generate an enemy's speed
+   * Parameter: dt, a time delta between ticks
+   * N.B. any movement is multiplied by the parameter 'dt', which ensures the
+   * game runs at the same speed for all computers.
+   */
+  generateSpeed(dt) {
+    return Math.random() * (5 - 1) + 1;
+  }
 
-    // If an enemy is off the grid, return them to the start.
+  /* Update the enemy's position */
+  update() {
     if (this.x > 505) {
-      this.generateCharacterics();
+      /* If an enemy is off the grid, return them to the start and give them a
+       * new y position and speed
+       */
+      this.x = -101;
+      this.y = this.generateY();
+      this.speed = this.generateSpeed();
     } else {
+      /* Else, move an enemy forward by some speed */
       this.x += this.speed;
     }
   }
 
-  // Draw the enemy on the screen, required method for game.
+  /* Draw an enemy on the screen, required method for game. */
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
 }
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
+/* A player */
 class Player {
+  /* Create and initialise a Player object */
   constructor() {
     this.sprite = './images/char-boy.png';
-    this.x = 2; this.y = 5;
+    this.x = 2;
+    this.y = 5;
   }
 
+  /* Reset a player to the starting position */
   reset() {
-     this.x = 2; this.y = 5;
+    this.x = 2;
+    this.y = 5;
   }
 
+  /* Not required */
   update() {}
 
+  /* Draw a player on the screen, required method for game. */
   render() {
-    ctx.drawImage(Resources.get(this.sprite), (this.x * 101), (this.y * 83) - 20);
+    ctx.drawImage(Resources.get(this.sprite),
+      (this.x * 101), (this.y * 83) - 20);
   }
 
+  /* Parse input of keys (invoked when when a key is pressed)
+   * Parameter: keyPressed, the key pressed (i.e. right, left, down, up)
+   */
   handleInput(keyPressed) {
     switch (keyPressed) {
-      case "right": if (this.x != 4) {
-          this.x += 1
-        }
+      case "right":
+        /* Move right */
+        this.moveRight();
         break;
-      case "left": if (this.x != 0) {
-          this.x -= 1
-        }
+      case "left":
+        /* Move left */
+        this.moveLeft();
         break;
-      case "down": if (this.y != 5) {
-          this.y += 1
-        }
+      case "down":
+        /* Move down */
+        this.moveDown();
         break;
-      case "up": this.y -= 1
+      case "up":
+        this.y -= 1
         break;
+    }
+  }
+
+  /* Move a player right if they aren't at right edge of board */
+  moveRight() {
+    if (this.x != 4) {
+      this.x += 1
+    }
+  }
+
+  /* Move a player left if they aren't at left edge of board */
+  moveLeft() {
+    if (this.x != 0) {
+      this.x -= 1
+    }
+  }
+
+  /* Move a player down if they aren't at bottom of board */
+  moveDown() {
+    if (this.y != 5) {
+      this.y += 1
     }
   }
 }
 
-// Now instantiate your objects.
-let enemy1 = new Enemy();
-let enemy2 = new Enemy();
-let enemy3 = new Enemy();
-// Place all enemy objects in an array called allEnemies
+// Instantiate Enemies
+let enemy1 = new Enemy(), enemy2 = new Enemy(), enemy3 = new Enemy();
+// Place all Enemy objects in array allEnemies
 let allEnemies = [enemy1, enemy2, enemy3];
 // Place the player object in a variable called player
 let player = new Player();
