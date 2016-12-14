@@ -3,6 +3,11 @@ class Enemy {
   /* Create and initialise an Enemy object */
   constructor() {
     this.sprite = './images/enemy-bug.png';
+    this.resetEnemy();
+  }
+
+  /* Reset an Enemy (i.e. default x position with random y position / speed) */
+  resetEnemy() {
     this.x = -101;
     this.y = this.generateY();
     this.speed = this.generateSpeed();
@@ -28,9 +33,7 @@ class Enemy {
       /* If an enemy is off the grid, return them to the start and give them a
        * new y position and speed
        */
-      this.x = -101;
-      this.y = this.generateY();
-      this.speed = this.generateSpeed();
+      this.resetEnemy();
     } else {
       /* Else, move an enemy forward by some speed */
       this.x += this.speed;
