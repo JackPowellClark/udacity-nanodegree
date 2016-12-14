@@ -30,12 +30,8 @@ class Enemy {
   /* Update the enemy's position */
   update() {
     if (this.x > 505) {
-      /* If an enemy is off the grid, return them to the start and give them a
-       * new y position and speed
-       */
       this.resetEnemy();
     } else {
-      /* Else, move an enemy forward by some speed */
       this.x += this.speed;
     }
   }
@@ -76,15 +72,12 @@ class Player {
   handleInput(keyPressed) {
     switch (keyPressed) {
       case "right":
-        /* Move right */
         this.moveRight();
         break;
       case "left":
-        /* Move left */
         this.moveLeft();
         break;
       case "down":
-        /* Move down */
         this.moveDown();
         break;
       case "up":
@@ -115,15 +108,18 @@ class Player {
   }
 }
 
-// Instantiate Enemies
-let enemy1 = new Enemy(), enemy2 = new Enemy(), enemy3 = new Enemy();
-// Place all Enemy objects in array allEnemies
-let allEnemies = [enemy1, enemy2, enemy3];
-// Place the player object in a variable called player
+/* Instantiate Enemies and place them in array 'allEnemies' */
+let enemy1 = new Enemy(),
+  enemy2 = new Enemy(),
+  enemy3 = new Enemy();
+  allEnemies = [enemy1, enemy2, enemy3];
+
+/* Place the player object in a variable called player */
 let player = new Player();
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+/* This listens for key presses and sends the keys to your
+ * Player.handleInput() method. You don't need to modify this
+ * */
 document.addEventListener('keyup', function (e) {
   const allowedKeys = {
     37: 'left',
