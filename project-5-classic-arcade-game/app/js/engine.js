@@ -23,6 +23,7 @@ var Engine = (function (global) {
     win = global.window,
     canvas = doc.createElement('canvas'),
     ctx = canvas.getContext('2d'),
+    score,
     lastTime;
 
   canvas.width = 505;
@@ -82,6 +83,8 @@ var Engine = (function (global) {
     updateEntities(dt);
     checkCollisions();
     checkCharacter();
+    updateScore(dt);
+    checkForWinner();
   }
 
   /* This is called by the update function and loops through all of the
@@ -111,12 +114,28 @@ var Engine = (function (global) {
     }
   }
 
-  /* Check whether character has entered water. */
+  /* Check whether character has entered water */
   function checkCharacter() {
     if (player.y == 0) {
       reset();
     }
   }
+
+  /* Update the score if a player is avoiding enenmies */
+  function updateScore(dt) {
+    if (player.y < 4) {
+      score += (10 * dt);
+    }
+  }
+
+  /* Check whether a player has 'won' */
+  function checkForWinner() {
+    if (score == 0) {
+      /* DO SOMETHING BECAUSE YOU WON! */
+    }
+  }
+
+
 
   /* This function initially draws the "game level", it will then call
    * the renderEntities function. Remember, this function is called every
@@ -158,6 +177,7 @@ var Engine = (function (global) {
     }
 
     renderEntities();
+    renderScore();
   }
 
   /* This function is called by the render function and is called on each game
@@ -175,12 +195,20 @@ var Engine = (function (global) {
     player.render();
   }
 
+  /* Render the score */
+  function renderScore() {
+    ctx.font="30px Sans-Serif";
+    ctx.textAlign = "center";
+    ctx.fillText(`Score: ${Math.floor(score)}`, 252.5, 100);
+  }
+
   /* This function does nothing but it could have been a good place to
    * handle game reset states - maybe a new game menu or a game over screen
    * those sorts of things. It's only called once by the init() method.
    */
   function reset() {
     player.reset();
+    score = 0;
   }
 
   /* Go ahead and load all of the images we know we're going to need to
