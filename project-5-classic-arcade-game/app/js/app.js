@@ -111,7 +111,7 @@ class Player {
 /* Instantiate Enemies and place them in array 'allEnemies' */
 let enemy1 = new Enemy(),
   enemy2 = new Enemy(),
-  enemy3 = new Enemy();
+  enemy3 = new Enemy(),
   allEnemies = [enemy1, enemy2, enemy3];
 
 /* Place the player object in a variable called player */

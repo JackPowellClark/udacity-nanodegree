@@ -197,7 +197,7 @@ var Engine = (function (global) {
 
   /* Render the score */
   function renderScore() {
-    ctx.font="30px Sans-Serif";
+    ctx.font = "30px Sans-Serif";
     ctx.textAlign = "center";
     ctx.fillText(`Score: ${Math.floor(score)}`, 252.5, 100);
   }
