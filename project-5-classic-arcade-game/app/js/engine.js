@@ -13,7 +13,6 @@
  * the canvas' context (ctx) object globally available to make writing app.js
  * a little simpler to work with.
  */
-
 var Engine = (function (global) {
   /* Predefine the variables we'll be using within this scope,
    * create the canvas element, grab the 2D context for that canvas
@@ -106,9 +105,12 @@ var Engine = (function (global) {
 
   /* Check whther two entities occupy the same space. If they do, reset game. */
   function checkCollisions() {
+    const XblockSize = 101,
+      YblockSize = 83;
+
     for (let enemy of allEnemies) {
-      let roundedX = Math.round(enemy.x / 101),
-        roundedY = Math.round(enemy.y / 83);
+      let roundedX = Math.round(enemy.x / XblockSize),
+        roundedY = Math.round(enemy.y / YblockSize);
 
       if (roundedX == player.x && roundedY == player.y) {
         reset();
@@ -118,25 +120,31 @@ var Engine = (function (global) {
 
   /* Check whether character has entered water */
   function checkCharacter() {
-    if (player.y == 0) {
+    const waterPosition = 0;
+
+    if (player.y == waterPosition) {
       reset();
     }
   }
 
   /* Update the score if a player is avoiding enenmies */
   function updateScore(dt) {
-    if (player.y < 4) {
-      score -= (10 * dt);
+    const grassBeginPosition = 4,
+      scoreMultiplier = 10;
+
+    if (player.y < grassBeginPosition) {
+      score -= (scoreMultiplier * dt);
     }
   }
 
   /* Check whether a player has 'won' */
   function checkForWinner() {
-    if (Math.floor(score) == 0) {
+    const winningScore = 0;
+
+    if (Math.floor(score) == winningScore) {
       reset();
       hasWon = true;
     }
-
   }
 
   /* Check whether a player has 'won' */
@@ -166,6 +174,8 @@ var Engine = (function (global) {
       ],
       numRows = 6,
       numCols = 5,
+      XblockSize = 101,
+      YblockSize = 83,
       row, col;
 
     /* Loop through the number of rows and columns we've defined above
@@ -181,7 +191,7 @@ var Engine = (function (global) {
          * so that we get the benefits of caching these images, since
          * we're using them over and over.
          */
-        ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
+        ctx.drawImage(Resources.get(rowImages[row]), col * XblockSize, row * YblockSize);
       }
     }
 
@@ -207,14 +217,20 @@ var Engine = (function (global) {
 
   /* Render the score */
   function renderScore() {
+    const textPosX = 252.5,
+      textPosY = 100;
+
     ctx.font = "30px Sans-Serif";
     ctx.textAlign = "center";
-    ctx.fillText(`Time Remaining (ms): ${Math.floor(score)}`, 252.5, 100);
+    ctx.fillText(`Time Remaining (ms): ${Math.floor(score)}`, textPosX, textPosY);
   }
 
   /* Render notification for win */
   function renderWinner() {
-    ctx.fillText(winnerMessage, 250, 430);
+    const textPosX = 252.5,
+      textPosY = 430;
+
+    ctx.fillText(winnerMessage, textPosX, textPosY);
   }
 
   /* This function does nothing but it could have been a good place to
@@ -222,8 +238,10 @@ var Engine = (function (global) {
    * those sorts of things. It's only called once by the init() method.
    */
   function reset() {
+    const targetTime = 250;
+
     player.reset();
-    score = 250;
+    score = targetTime;
   }
 
   /* Go ahead and load all of the images we know we're going to need to

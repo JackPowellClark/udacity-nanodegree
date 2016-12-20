@@ -8,7 +8,9 @@ class Enemy {
 
   /* Reset an Enemy (i.e. default x position with random y position / speed) */
   resetEnemy() {
-    this.x = -101;
+    const offGridX = -101;
+
+    this.x = offGridX;
     this.y = this.generateY();
     this.speed = this.generateSpeed();
   }
@@ -29,7 +31,9 @@ class Enemy {
 
   /* Update the enemy's position */
   update() {
-    if (this.x > 505) {
+    const gridSizeX = 505
+
+    if (this.x > gridSizeX) {
       this.resetEnemy();
     } else {
       this.x += this.speed;
@@ -62,8 +66,11 @@ class Player {
 
   /* Draw a player on the screen, required method for game. */
   render() {
+    const XblockSize = 101,
+      YblockSize = 83;
+
     ctx.drawImage(Resources.get(this.sprite),
-      (this.x * 101), (this.y * 83) - 20);
+      (this.x * XblockSize), (this.y * YblockSize) - 20);
   }
 
   /* Parse input of keys (invoked when when a key is pressed)
@@ -88,21 +95,27 @@ class Player {
 
   /* Move a player right if they aren't at right edge of board */
   moveRight() {
-    if (this.x != 4) {
+    const canvasEdgeLeft = 4;
+
+    if (this.x != canvasEdgeLeft) {
       this.x += 1
     }
   }
 
   /* Move a player left if they aren't at left edge of board */
   moveLeft() {
-    if (this.x != 0) {
+    const canvasEdgeRight = 4;
+
+    if (this.x != canvasEdgeRight) {
       this.x -= 1
     }
   }
 
   /* Move a player down if they aren't at bottom of board */
   moveDown() {
-    if (this.y != 5) {
+    const canvasEdgeBottom = 5;
+
+    if (this.y != canvasEdgeBottom) {
       this.y += 1
     }
   }
