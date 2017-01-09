@@ -7,6 +7,7 @@ Simply go to: https://developers.google.com/speed/pagespeed/insights/?url=wise-r
 
 ### Optimisations Made
 After running the given site through Page Speed Insights to measure the performance of a page for mobile devices and desktop devices, the following optimisations were made:
+
 1. Optimised images and specified dimensions
 2. Removed any unused CSS rules
 3. Removed web font; replacing with system default
