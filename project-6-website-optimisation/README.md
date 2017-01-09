@@ -1,23 +1,32 @@
-## Website Performance Optimization
+# Website Performance Optimization
 
-Detail all steps required to successfully run the application
- outlines the optimizations that the student made in index.html and views/js/main.js for pizza.html.
+## PageSpeed Score
 
-## How to Run
-Simple open index.html (located in the 'App' directory).
+### Criteria: Critical Rendering Path
+Simply go to: https://developers.google.com/speed/pagespeed/insights/?url=wise-range.surge.sh
 
-## How to Play
-The aim of this game is survive for some set period of time. As a default, this is set to 250 miliseconds.
+### Optimisations Made
+After running the given site through Page Speed Insights to measure the performance of a page for mobile devices and desktop devices, the following optimisations were made:
+1. Optimised images and specified dimensions
+2. Removed any unused CSS rules
+3. Removed web font; replacing with system default
+4. Inlined critical CSS
 
-Use the arrow keys to move your hero. Whilst on the grass you're safe, however the timer won't tick down.
+## Getting Rid of Jank
 
-Using the arrow keys, move your hero onto the stone road to being the timer (just remember to dodge the enemies!).
+### Criteria: Frame Rate
+To run: navigate to `./views` and open `pizza.html`
 
-If you die, you'll be reset and ready to try again! When you win, simply refresh the page to play again.
+### Optimisations Made
+1. Reduced the number of sliding pizzas generated when the page loads from 200, to 50
+2. Replaced `querySelectorAll('.mover')` with `getElementsByClassName('mover')`
+3. Replaced `style.left` with `style.transform`
+4. Varible `phase` will only ever be 1 of 5 values, and the caluation is heavy: `phases.push(Math.sin((document.body.scrollTop / 1250) + (i % 5)))`. Set `phase` *outside* the `for` loop translating pizzas.
 
-If you'd like to change the time required to win, open engine.js, and change the variable score—found on line 226—to a new value.
+### Criteria: Computational Efficiency
+To run: navigate to `./views` and open `pizza.html`
 
-### Note
-This project was written in ES6 to take advantage of the new 'Class' syntax.
-
-Please run in the latest version of Chrome.
+### Optimisations Made
+1. Replaced `querySelectorAll("#mover")` with `getElementById("pizzaSize")`
+2. Replaced `querySelectorAll(".randomPizzaContainer")` with `getElementsByClassName("randomPizzaContainer")`
+3. Refactored function `changePizzaSizes`. Notably, removed the need to loop through all pizzas to determine a `dx` and `newwidth`. Instead, compute these values *once*, and then use this new width to loop through and set a new width for all pizzas.
