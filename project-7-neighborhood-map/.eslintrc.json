@@ -1,0 +1,19 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "eslint.validate": [
+    "javascript"
+  ],
+  "extends": "airbnb-base",
+  "plugins": [
+    "import"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ]
+  }
+}
