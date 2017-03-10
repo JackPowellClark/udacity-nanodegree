@@ -25,7 +25,7 @@
         "lat": 50.825748,
         "lng": -0.1411681
       },
-      "brews": ["Espresso", "French Press", "Percolator", "Aeropress", "Chemex"]
+      "brews": ["French Press", "Percolator", "Aeropress", "Chemex"]
     },
     {
       "title": "Marwood Coffeehouse",
