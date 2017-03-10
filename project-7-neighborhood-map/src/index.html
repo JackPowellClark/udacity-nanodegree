@@ -16,8 +16,8 @@
 
         <h2 style="font-size: 14px">Filter on brew type:</h2>
         <select data-bind="options: filters, value: filter" style="width: 100%"></select>
-        <ul data-bind="foreach: myMarkers">
-          <li data-bind="text: title, click: animateAndInfo" style="list-style-type: none; margin-bottom: 1em; cursor: pointer;"></li>
+        <ul data-bind="foreach: filteredItems">
+          <li data-bind="text: title, click: showInfo" style="list-style-type: none; margin-bottom: 1em; cursor: pointer;"></li>
         </ul>
       </aside>
 
