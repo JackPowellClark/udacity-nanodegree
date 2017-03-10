@@ -1,0 +1,28 @@
+#app {
+  display: flex;
+  height: 100%;
+  font: 16px sans-serif;
+
+  aside {
+  width: 240px;
+  padding: 1em;
+  background: #F5F5F5;
+  }
+
+  main {
+    height: 100%;
+    width: 100%;
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

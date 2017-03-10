@@ -34,6 +34,10 @@ const CONFIG = {
         },
         exclude: /node_modules/,
       },
+      /* {
+        test: /\.json$/,
+        use: 'json-loader',
+      },*/
       {
         test: /\.(png|jpg|gif|svg|ico)$/,
         loader: 'file-loader',

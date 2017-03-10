@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Map</title>
+    <meta name="author" content="Jack Clark">
+    <meta name="description" content="">
+  </head>
+
+  <body>
+    <div id="app">
+      <aside>
+        <h1 style="text-align: center">Cafes of Brighton</h1>
+
+        <h2 style="font-size: 14px">Filter on brew type:</h2>
+        <select data-bind="options: filters, value: filter" style="width: 100%"></select>
+        <ul data-bind="foreach: myMarkers">
+          <li data-bind="text: title, click: animateAndInfo" style="list-style-type: none; margin-bottom: 1em; cursor: pointer;"></li>
+        </ul>
+      </aside>
+
+      <main id="map">
+      </main>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTGm8HwddWlz8dUQQFM4WGr7HmD1uOnYs"></script>
+  </body>
+
+</html>

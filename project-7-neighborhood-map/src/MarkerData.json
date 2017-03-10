@@ -1,0 +1,49 @@
+{
+  "filters": ["All", "Espresso", "French Press", "Percolator", "Aeropress", "Chemex"],
+  "markers": [{
+      "title": "Cafe Coho",
+      "content": "Trendy coffee shop with bare bricks and reclaimed furniture, for breakfast, savoury snacks and cake.",
+      "position": {
+        "lat": 50.8281419,
+        "lng": -0.1410642
+      },
+      "brews": ["Espresso", "French Press"]
+    },
+    {
+      "title": "Coffee33",
+      "content": "An under-stated coffee shop filled by a wooden bar. Serves coffee, cake, snacks, and sandwiches.",
+      "position": {
+        "lat": 50.8281195,
+        "lng": -0.1396191
+      },
+      "brews": ["Espresso", "Aeropress"]
+    },
+    {
+      "title": "Small Batch Coffee Company",
+      "content": "Indie coffee roaster's popular flagship cafe with full-length windows.",
+      "position": {
+        "lat": 50.825748,
+        "lng": -0.1411681
+      },
+      "brews": ["Espresso", "French Press", "Percolator", "Aeropress", "Chemex"]
+    },
+    {
+      "title": "Marwood Coffeehouse",
+      "content": "Coffee, cake and a simple menu, surrounded by books, toys, 1980s relics and crazy bric-a-brac.",
+      "position": {
+        "lat": 50.8261516,
+        "lng": -0.1416449
+      },
+      "brews": ["Espresso", "French Press", "Percolator"]
+    },
+    {
+      "title": "Silo",
+      "content": "Airy, wood and steel-furnished, eco-chic restaurant serving menu made from locally sourced produce.",
+      "position": {
+        "lat": 50.8236483,
+        "lng": -0.1407846
+      },
+      "brews": ["Espresso"]
+    }
+  ]
+}

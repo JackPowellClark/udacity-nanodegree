@@ -1,0 +1,10 @@
+✔ Using the Google Maps API, show a full-screen map. @done (10/03/2017, 10:07:29)
+✔ When the page loads, display at least 5 map markers. @done (10/03/2017, 10:07:11)
+✔ Clicking a marker should displays unique information about a location in either an infoWindow or DOM element. @done (10/03/2017, 10:07:34)
+✔ Marker’s should animate when clicked (e.g. bouncing, color change.) @done (10/03/2017, 15:07:24)
+✔ There should be a list view for identifying locations. Clicking a location on the list displays unique information about the location, and animates its associated map marker (e.g. bouncing, color change.) @done (10/03/2017, 17:46:22)
+☐ There should be the option to filter both the list view and the map markers. This filter can be a dropdown menu, and should filter the map markers and list items to locations matching the selection.
+
+☐ A README file is included detailing all steps required to successfully run the application.
+☐ Comments are present and effectively explain longer code procedures.
+☐ Throw an error (i.e. an alert) when a third party API does not return an expected result.
