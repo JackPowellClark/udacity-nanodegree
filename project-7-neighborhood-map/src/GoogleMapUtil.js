@@ -10,14 +10,15 @@ export default class GoogleMapUtil {
       const marker = this.createMarker(map, markerInfo.position,
         markerInfo.title, markerInfo.content, markerInfo.brews);
 
-      marker.animateAndInfo = function () {
+      marker.showInfo = function () {
         GoogleMapUtil.animateMarker(marker);
         GoogleMapUtil.populateInfoWindow(map, marker, infoWindow);
       };
 
       marker.addListener('click', () => {
-        marker.animateAndInfo();
+        marker.showInfo();
       });
+
       markers.push(marker);
     }
     return markers;
