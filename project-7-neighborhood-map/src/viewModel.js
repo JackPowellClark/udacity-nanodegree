@@ -23,20 +23,25 @@ function ViewModel() {
   const self = this;
 
   /* Data */
-  self.myMarkers = Knockout.observableArray(GoogleMapUtil.drawMarkers(map,
-    markersData.markers, infoWindow));
   self.filters = Knockout.observableArray(markersData.filters);
   self.filter = Knockout.observable('');
-
+  self.myMarkers = Knockout.observableArray(GoogleMapUtil.drawMarkers(map,
+    markersData.markers, infoWindow));
   self.filteredItems = Knockout.computed(() => {
     const filter = self.filter();
-
+    /* If there's no filter currently set, or it's set to all, set all markers
+     * visable and return */
     if (!filter || filter === 'All') {
-      console.log('There is not filter selected, or All');
-      return self.myMarkers();
+      Knockout.utils.arrayForEach(self.myMarkers(), (marker) => {
+        marker.setVisible(true);
+      }); return self.myMarkers();
     }
-    console.log(`You selected ${filter}`);
-    return Knockout.utils.arrayFilter(self.myMarkers(), i => i.type === filter);
+    /* Iterate through markers, checking . Return a filtered list of cafes. */
+    return Knockout.utils.arrayFilter(self.myMarkers(), (marker) => {
+      for (const brew of marker.brews) {
+        if (brew === filter) { marker.setVisible(true); return true; }
+      } marker.setVisible(false);
+    });
   });
 }
 
