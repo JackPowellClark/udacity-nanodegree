@@ -3,8 +3,9 @@
 ✔ Clicking a marker should displays unique information about a location in either an infoWindow or DOM element. @done (10/03/2017, 10:07:34)
 ✔ Marker’s should animate when clicked (e.g. bouncing, color change.) @done (10/03/2017, 15:07:24)
 ✔ There should be a list view for identifying locations. Clicking a location on the list displays unique information about the location, and animates its associated map marker (e.g. bouncing, color change.) @done (10/03/2017, 17:46:22)
-☐ There should be the option to filter both the list view and the map markers. This filter can be a dropdown menu, and should filter the map markers and list items to locations matching the selection.
+✔ There should be the option to filter both the list view and the map markers. This filter can be a dropdown menu, and should filter the map markers and list items to locations matching the selection. @done (11/03/2017, 12:09:54)
 
+✔ Comments are present and effectively explain longer code procedures. @done (11/03/2017, 13:09:59)
+☐ Site should be mobile responsive.
 ☐ A README file is included detailing all steps required to successfully run the application.
-☐ Comments are present and effectively explain longer code procedures.
 ☐ Throw an error (i.e. an alert) when a third party API does not return an expected result.
