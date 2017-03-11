@@ -4,8 +4,8 @@
       "title": "Cafe Coho",
       "content": "Trendy coffee shop with bare bricks and reclaimed furniture, for breakfast, savoury snacks and cake.",
       "position": {
-        "lat": 50.8281419,
-        "lng": -0.1410642
+        "lat": 50.828129,
+        "lng": -0.141248
       },
       "brews": ["Espresso", "French Press"]
     },
@@ -13,26 +13,53 @@
       "title": "Coffee33",
       "content": "An under-stated coffee shop filled by a wooden bar. Serves coffee, cake, snacks, and sandwiches.",
       "position": {
-        "lat": 50.8281195,
-        "lng": -0.1396191
+        "lat": 50.828302,
+        "lng": -0.138931
       },
       "brews": ["Espresso", "Aeropress"]
+    },
+    {
+      "title": "Redwood",
+      "content": "Coffee house serving fair trade organic coffee, scrummy breakfasts, delicious soups, and savouries.",
+      "position": {
+        "lat": 50.828025,
+        "lng": -0.136344
+      },
+      "brews": ["Espresso", "French Press", "Aeropress"]
+    },
+    {
+      "title": "Pelicano",
+      "content": "A specialty micro coffee roastery and Espresso Bar. Coffees are sourced from around the world, and traded in a way that is socially and environmentally friendly.",
+      "position": {
+        "lat": 50.827800,
+        "lng": -0.137499
+      },
+      "brews": ["Espresso", "French Press", "Percolator", "Aeropress", "Chemex"]
     },
     {
       "title": "Small Batch Coffee Company",
       "content": "Indie coffee roaster's popular flagship cafe with full-length windows.",
       "position": {
-        "lat": 50.825748,
-        "lng": -0.1411681
+        "lat": 50.824357,
+        "lng": -0.138791
       },
       "brews": ["French Press", "Percolator", "Aeropress", "Chemex"]
+    },
+    {
+      "title": "Bond St Coffee",
+      "content": "Serves coffee roasted by Horsham Coffee Roaster (just a short drive north of Brighton). Coffee is crafted with great pride, care and attention, and provides an outstanding, unique and memorable coffee experience.",
+      "position": {
+        "lat": 50.823971,
+        "lng": -0.140093
+      },
+      "brews": ["Espresso"]
     },
     {
       "title": "Marwood Coffeehouse",
       "content": "Coffee, cake and a simple menu, surrounded by books, toys, 1980s relics and crazy bric-a-brac.",
       "position": {
-        "lat": 50.8261516,
-        "lng": -0.1416449
+        "lat": 50.822468,
+        "lng": -0.141521
       },
       "brews": ["Espresso", "French Press", "Percolator"]
     },
