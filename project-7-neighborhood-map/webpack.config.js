@@ -57,8 +57,8 @@ const CONFIG = {
     }),
   ],
   devServer: {
-    /* historyApiFallback: true,
-    noInfo: true, */
+    historyApiFallback: true,
+    noInfo: true,
     contentBase: Path.resolve(__dirname, 'src'),
   },
 };
