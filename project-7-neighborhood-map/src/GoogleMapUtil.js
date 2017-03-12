@@ -5,7 +5,7 @@ export default class GoogleMapUtil {
   static initMap(element, position) {
     return new google.maps.Map(document.getElementById(element), {
       center: position,
-      zoom: 16,
+      zoom: 15,
       disableDefaultUI: true,
       zoomControl: true,
     });
