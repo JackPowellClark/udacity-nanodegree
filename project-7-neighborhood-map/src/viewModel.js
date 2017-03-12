@@ -5,7 +5,7 @@ import GoogleMapUtil from './GoogleMapUtil';
 import markersData from './MarkerData.json';
 
 /* Create an initialised map and info window */
-const map = GoogleMapUtil.initMap('map', { lat: 50.8237, lng: -0.1385 });
+const map = GoogleMapUtil.initMap('map', { lat: 50.8237, lng: -0.140 });
 const infoWindow = new google.maps.InfoWindow();
 
 /* Define a viewmodel for both the data and behavior of the UI */
