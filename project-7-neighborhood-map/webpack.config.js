@@ -34,10 +34,6 @@ const CONFIG = {
         },
         exclude: /node_modules/,
       },
-      /* {
-        test: /\.json$/,
-        use: 'json-loader',
-      },*/
       {
         test: /\.(png|jpg|gif|svg|ico)$/,
         loader: 'file-loader',
@@ -59,7 +55,7 @@ const CONFIG = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    contentBase: Path.resolve(__dirname, 'src'),
+    contentBase: Path.resolve(__dirname, 'dist'),
   },
 };
 
