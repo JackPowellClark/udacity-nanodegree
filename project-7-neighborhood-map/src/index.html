@@ -4,27 +4,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neighborhood Map</title>
+    <title>Coffee in Brighton</title>
     <meta name="author" content="Jack Clark">
-    <meta name="description" content="">
+    <meta name="description" content="A single-page application featuring a map of coffee shops in Brighton.">
   </head>
 
   <body>
     <div id="app">
-      <aside>
-        <h1 style="text-align: center">Cafes of Brighton</h1>
+      <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+      <label for="nav-trigger"></label>
 
-        <h2 style="font-size: 14px">Filter on brew type:</h2>
-        <select data-bind="options: filters, value: filter" style="width: 100%"></select>
+      <aside>
+        <h1>Coffee in Brighton</h1>
+        <h2>Filter cafes by brew type:</h2>
+        <select data-bind="options: filters, value: filter" class="select"></select>
         <ul data-bind="foreach: filteredItems">
-          <li data-bind="text: title, click: showInfo" style="list-style-type: none; margin-bottom: 1em; cursor: pointer;"></li>
+          <li data-bind="text: title, click: displayInfo"></li>
         </ul>
       </aside>
 
       <main id="map">
       </main>
     </div>
-
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTGm8HwddWlz8dUQQFM4WGr7HmD1uOnYs"></script>
   </body>
 
