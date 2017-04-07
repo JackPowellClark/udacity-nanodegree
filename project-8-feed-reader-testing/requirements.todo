@@ -16,26 +16,26 @@
 
 ✔ Write a test that loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty. @done (07/04/2017, 10:48:13)
 
-☐ Write a new test suite named `"The menu"`.
+✔ Write a new test suite named `"The menu"`. @done (07/04/2017, 11:04:06)
 
-☐ Write a test that ensures the menu element is hidden by default. You'll have to analyze the HTML and the CSS to determine how we're performing the hiding/showing of the menu element.
+✔ Write a test that ensures the menu element is hidden by default. You'll have to analyze the HTML and the CSS to determine how we're performing the hiding/showing of the menu element. @done (07/04/2017, 11:04:07)
 
-☐ Write a test that ensures the menu changes visibility when the menu icon is clicked. This test should have two expectations: does the menu display when clicked and does it hide when clicked again.
+✔ Write a test that ensures the menu changes visibility when the menu icon is clicked. This test should have two expectations: does the menu display when clicked and does it hide when clicked again. @done (07/04/2017, 11:07:55)
 
-☐ Write a test suite named `"Initial Entries"`.
+✔ Write a test suite named `"Initial Entries"`. @done (07/04/2017, 13:03:35)
 
-☐ Write a test that ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container.
+✔ Write a test that ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container. @done (07/04/2017, 13:03:36)
 
-☐ Write a test suite named `"New Feed Selection"`.
+✔ Write a test suite named `"New Feed Selection"`. @done (07/04/2017, 13:03:42)
 
-☐ Write a test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes.
+✔ Write a test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes. @done (07/04/2017, 13:17:46)
 
-☐ No test should be dependent on the results of another.
+✔ No test should be dependent on the results of another. @done (07/04/2017, 13:03:45)
 
-☐ Callbacks should be used to ensure that feeds are loaded before they are tested.
+✔ Callbacks should be used to ensure that feeds are loaded before they are tested. @done (07/04/2017, 13:03:50)
 
-☐ Implement error handling for undefined variables and out-of-bound array access.
+✔ Implement error handling for undefined variables and out-of-bound array access. @done (07/04/2017, 13:21:32)
 
-☐ When complete - all of your tests should pass.
+✔ When complete - all of your tests should pass. @done (07/04/2017, 13:03:57)
 
-☐ Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+✔ Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for. @done (07/04/2017, 13:18:00)
