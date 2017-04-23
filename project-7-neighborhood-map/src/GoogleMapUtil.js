@@ -17,8 +17,9 @@ export default class GoogleMapUtil {
 
     /* Iterate over each marker in the given array of marker data */
     for (const markerInfo of arrayOfMarkerData) {
+      // console.log(`I'm iterating over each marker (for given array). It's currentWeather is: ${markerInfo.currentWeather}`);
       const marker = this.createMarker(map, markerInfo.position,
-        markerInfo.title, markerInfo.content, markerInfo.brews);
+        markerInfo.title, markerInfo.content, markerInfo.brews, markerInfo.currentWeather);
 
       /* Give each marker a function to display information */
       marker.displayInfo = function () {
@@ -37,13 +38,14 @@ export default class GoogleMapUtil {
   }
 
   /* Create a new marker */
-  static createMarker(map, position, title, content, brews) {
+  static createMarker(map, position, title, content, brews, currentWeather) {
     return new google.maps.Marker({
       map,
       position,
       title,
       content,
       brews,
+      currentWeather,
     });
   }
 
@@ -61,6 +63,7 @@ export default class GoogleMapUtil {
     infoWindow.setContent(`
       <div style="text-align: center; font-weight: bold;"> ${marker.title} </div>
       <p> ${marker.content} </p>
+      <p> The weather here is: ${marker.currentWeather}</>
     `);
     infoWindow.open(map, marker);
   }
