@@ -2,11 +2,26 @@
 /* import KnockoutJS, GoogleMapUtil.js, and markerData as dependencies. */
 import KO from 'knockout';
 import GoogleMapUtil from './GoogleMapUtil';
+import OpenWeatherAPI from './OpenWeatherAPI';
 import markersData from './MarkerData.json';
 
+let markersDataWithWeather;
+let map; let infoWindow;
+
 /* Create an initialised map and info window */
-const map = GoogleMapUtil.initMap('map', { lat: 50.8237, lng: -0.140 });
-const infoWindow = new google.maps.InfoWindow();
+window.initToWinIt = function initToWinIt() {
+  markersDataWithWeather = OpenWeatherAPI.getCurrentWeather(markersData.markers);
+};
+
+window.drawMap = function drawMap() {
+  map = GoogleMapUtil.initMap('map', { lat: 50.8237, lng: -0.140 });
+  infoWindow = new google.maps.InfoWindow();
+  KO.applyBindings(new ViewModel());
+};
+
+window.errorHandler = function errorHandler() {
+  alert('Google Maps failed to load. Please try again.');
+};
 
 /* Define a viewmodel for both the data and behavior of the UI */
 function ViewModel() {
@@ -16,7 +31,7 @@ function ViewModel() {
   self.filter = KO.observable('');
   self.filters = KO.observableArray(markersData.filters);
   self.myMarkers = KO.observableArray(GoogleMapUtil.drawMarkers(map,
-    markersData.markers, infoWindow));
+    markersDataWithWeather, infoWindow));
 
   self.filteredItems = KO.computed(() => {
     const filter = self.filter();
@@ -31,10 +46,11 @@ function ViewModel() {
     return KO.utils.arrayFilter(self.myMarkers(), (marker) => {
       for (const brew of marker.brews) {
         if (brew === filter) { marker.setVisible(true); return true; }
-      } marker.setVisible(false);
+      }
+      marker.setVisible(false);
     });
   });
 }
 
-/* Activate knockout.js */
-KO.applyBindings(new ViewModel());
+/* Create an initialised map and info window */
+// initToWinIt();
